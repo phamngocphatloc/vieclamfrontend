@@ -1,0 +1,48 @@
+<section class="intro">
+    <div class="bg-image h-100" style="background-color: #6095F0;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card shadow-2-strong" style="background-color: #f5f7fa;">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-borderless mb-0">
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <div class="form-check">
+                              #
+                            </div>
+                          </th>
+                          <th scope="col">Job Name</th>
+                          <th scope="col">Công Ty</th>
+                          <th scope="col">Nature</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="item in applys">
+                          
+                          <td>{{item.id}}</td>
+                          <td>{{item.job.jobName}}</td>
+                          <td>{{item.job.jobCompany.companyName}}</td>
+                          <td>{{item.job.nature}}</td>
+                          <td>
+                            <a class="btn" ng-click="delete(item.id)" style="height: 50px;margin-bottom: 10px;">
+                              xóa
+                            </a>
+                          </td>
+                          <td><a class="btn btn-danger" href="#!/job/{{item.job.jobId}}">Xem Job</a></td>
+                        
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

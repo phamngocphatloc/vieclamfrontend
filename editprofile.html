@@ -1,0 +1,240 @@
+<div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+    <nav class="nav nav-borders">
+        
+    </nav>    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <style>
+                input.ng-invalid {border-color: red; background-image: url(assets/img/icon/failure.png); background-repeat: no-repeat; background-position: right;}
+            </style>
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Profile Picture</div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img ng-show="{{resume.avatar = 'chua cap nhat'}}" class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <!-- Profile picture help block-->
+                </div>
+                <div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Header-->
+      <div class="modal-header">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.webp" alt="avatar" class="rounded-circle img-responsive">
+      </div>
+      <!--Body-->
+      <div class="modal-body text-center mb-1">
+
+        <h5 class="mt-1 mb-2">{{user.username}}</h5>
+
+        <div class="md-form ml-0 mr-0">
+          <input type="text" ng-model="skill" type="text" id="form29" class="form-control form-control-sm validate ml-0">
+          <label data-error="wrong" data-success="right" for="form29" class="ml-0">Enter Skill</label>
+        </div>
+
+        <div class="text-center mt-4">
+          <button class="btn btn-cyan mt-1" ng-click="addskill()">Add <i class="fas fa-sign-in ml-1"></i></button>
+        </div>
+      </div>
+
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: Login with Avatar Form-->
+
+  <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#modalLoginAvatar">add Skill
+    </a>
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Kinh Nghiệm Làm Việc</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form name="frmExp" ng-submit="addexp()">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="" class="form-control validate" ng-model="joblocation" required>
+          <label data-error="wrong" data-success="right" for="orangeForm-name">job Location</label>
+        </div>
+        <div class="md-form mb-5">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="" class="form-control validate" pattern="\d{4}-\d{2}-\d{2}" ng-model="dateStart" required>
+            <label data-error="wrong" data-success="right" for="orangeForm-name"  >Ngày Bắt Đầu (yyyy-dd-mm): </label>
+          </div>
+          <div class="md-form mb-5">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="" class="form-control validate" pattern="\d{4}-\d{2}-\d{2}" ng-model="dateEnd" required>
+            <label data-error="wrong" data-success="right" for="orangeForm-name"  >Ngày Kết Thúc (yyyy-dd-mm): </label>
+          </div>
+          <div class="md-form mb-5">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="" class="form-control validate" ng-model="describe" required>
+            <label data-error="wrong" data-success="right" for="orangeForm-name">describe</label>
+          </div>
+          <div class="md-form mb-5">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="" class="form-control validate" ng-model="achivement" required>
+            <label data-error="wrong" data-success="right" for="orangeForm-name">achivement</label>
+          </div>
+          <div class="md-form mb-5">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="" class="form-control validate" ng-model="company" required>
+            <label data-error="wrong" data-success="right" for="orangeForm-name">company</label>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button class="btn btn-deep-orange" type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+      
+    
+    </div>
+  </div>
+</div>
+
+  <a href="" class="btn btn-default btn-rounded " data-toggle="modal" data-target="#modalRegisterForm">Add WorkExp</a>
+  <a href="" class="btn btn-default btn-rounded"  data-toggle="modal" data-target="#modalAddEdu">Add Edu</a>
+  <div class="modal fade" id="modalAddEdu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Học Vấn</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form name="frmExp" ng-submit="addedu()">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="" class="form-control validate" ng-model="major" required>
+          <label data-error="wrong" data-success="right" for="orangeForm-name">Chuyên Ngành</label>
+        </div>
+        <div class="md-form mb-5">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="" class="form-control validate" pattern="\d{4}-\d{2}-\d{2}" ng-model="dateStart" required>
+            <label data-error="wrong" data-success="right" for="orangeForm-name"  >Ngày Bắt Đầu (yyyy-dd-mm): </label>
+          </div>
+          <div class="md-form mb-5">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="" class="form-control validate" pattern="\d{4}-\d{2}-\d{2}" ng-model="dateEnd" required>
+            <label data-error="wrong" data-success="right" for="orangeForm-name"  >Ngày Kết Thúc (yyyy-dd-mm): </label>
+          </div>
+          <div class="md-form mb-5">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="" class="form-control validate" ng-model="school" required>
+            <label data-error="wrong" data-success="right" for="orangeForm-name">Trường</label>
+          </div>
+          
+          <div class="modal-footer d-flex justify-content-center">
+            <button class="btn btn-deep-orange" type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+      
+    
+    </div>
+  </div>
+</div>
+<a href="" class="btn btn-default btn-rounded"  data-toggle="modal" data-target="#modalAddAward">Add Award</a>
+  <div class="modal fade" id="modalAddAward" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Award</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form name="frmExp" ng-submit="addaward()">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="" class="form-control validate" ng-model="awardName" required>
+          <label data-error="wrong" data-success="right" for="orangeForm-name">Tên Giải Thưởng</label>
+        </div>
+
+          <div class="md-form mb-5">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="" class="form-control validate" ng-model="awardContent" required>
+            <label data-error="wrong" data-success="right" for="orangeForm-name">Nội Dung</label>
+          </div>
+          
+          <div class="modal-footer d-flex justify-content-center">
+            <button class="btn btn-deep-orange" type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+      
+    
+    </div>
+  </div>
+</div>
+
+  
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Account Details</div>
+                <div class="card-body">
+                    <form name="FrmEdit" ng-submit="editProfile()">
+                        <!-- Form Group (username)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Vị Trí Công Việc</label>
+                            <input  name="jobPosition" class="form-control" id="inputUsername" type="text" placeholder="Input Job Position" required ng-model="jobPosition">
+                            <small  ng-show="FrmEdit.jobPosition.$invalid" class="text-center" style="color: red;">Vui Lòng Nhập Vị Trí Công Việc</small>
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">Ảnh Đại Diện</label>
+                                <input  class="form-control" id="inputFirstName" type="text" placeholder="input link avatar" value="Valerie" ng-model="avatar">
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Mô Tả Cá Nhân</label>
+                            <input  name="carrer" class="form-control" id="inputUsername" type="text" placeholder="Input Job Position" required ng-model="carrer">
+                            <small  ng-show="FrmEdit.carrer.$invalid" class="text-center" style="color: red;">Vui Lòng Nhập Mô Tả Cá Nhân</small>
+                            </div>
+                        </div>
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (organization name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputOrgName">Github</label>
+                                <input  name="github" class="form-control" id="inputUsername" type="text" placeholder="Input Job Position" required ng-model="github">
+                                <small  ng-show="FrmEdit.github.$invalid" class="text-center" style="color: red;">Vui Lòng Nhập Link GitHub</small>
+                            </div>
+                            <!-- Form Group (location)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Website</label>
+                                <input  name="website" class="form-control" id="inputUsername" type="text" placeholder="Input Job Position" ng-model="website">
+                            </div>
+                        </div>
+                        
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" type="submit" data-bs-toggle="modal">Save changes</button>
+                        
+                        <p ng-show="{{success != undefined}}" class="alert alert-success">{{success}}</p>
+                        <p ng-show="{{error != undefined}}" class="alert alert-danger">{{error}}</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
